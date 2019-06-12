@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="891.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ho.boris.homelibrary.ClientViewModel">
+  <tabs>
+      <Tab fx:id="tab_login" text="Login">
+        <content>
+          <AnchorPane fx:id="anchor_login" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="login_username_input" layoutX="314.0" layoutY="138.0" prefHeight="50.0" prefWidth="285.0" promptText="Username" />
+                  <TextField fx:id="login_password_input" layoutX="314.0" layoutY="222.0" prefHeight="50.0" prefWidth="285.0" promptText="Password" />
+                  <Button fx:id="login_submit_button" layoutX="473.0" layoutY="410.0" mnemonicParsing="false" onAction="#login" prefHeight="32.0" prefWidth="126.0" text="Login" />
+                  <Button fx:id="login_reset_pw_button" layoutX="314.0" layoutY="410.0" mnemonicParsing="false" onAction="#setupResetPassword" prefHeight="32.0" prefWidth="125.0" text="Reset Password" />
+                  <Button fx:id="login_register_button" layoutX="394.0" layoutY="489.0" mnemonicParsing="false" onAction="#setUpRegistration" prefHeight="32.0" prefWidth="125.0" text="Register" />
+                  <TextField fx:id="login_register_email_input" layoutX="314.0" layoutY="302.0" prefHeight="50.0" prefWidth="285.0" promptText="Email" text="Email" visible="false" />
+                  <Button fx:id="login_register_sign_up_button" layoutX="672.0" layoutY="324.0" mnemonicParsing="false" onAction="#addNewUser" prefHeight="35.0" prefWidth="122.0" text="Sign-Up" visible="false" />
+                  <Button fx:id="login_create_user_button" layoutX="672.0" layoutY="378.0" mnemonicParsing="false" onAction="#registerNewUser" prefHeight="40.0" prefWidth="123.0" text="Create Account" visible="false" />
+                  <Button fx:id="login_reset_button" layoutX="644.0" layoutY="156.0" mnemonicParsing="false" onAction="#resetUserPassword" prefHeight="34.0" prefWidth="121.0" text="Reset" visible="false" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+    <Tab fx:id="tab_add" text="Add">
+      <content>
+        <AnchorPane fx:id="anchor_add">
+               <children>
+                  <Label layoutX="59.0" layoutY="32.0" text="ADD TO LISTINGS" underline="true" />
+                  <Label layoutX="14.0" layoutY="85.0" prefHeight="30.0" prefWidth="140.0" text="STREET ADDRESS:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="add_home_address_input" layoutX="160.0" layoutY="79.0" prefHeight="30.0" prefWidth="250.0" text=" ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="14.0" layoutY="136.0" text="CITY: ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="add_home_city_input" layoutX="61.0" layoutY="124.0" prefHeight="30.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="14.0" layoutY="188.0" text="STATE: ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="add_home_state_input" layoutX="76.0" layoutY="173.0" prefHeight="30.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="13.0" layoutY="239.0" text="HOME SIZE:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="add_home_size_input" layoutX="113.0" layoutY="224.0" prefHeight="30.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="11.0" layoutY="293.0" text="HOME PRICE:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="add_home_price_input" layoutX="117.0" layoutY="278.0" prefHeight="30.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="add_home_image_view" fitHeight="299.0" fitWidth="418.0" layoutX="459.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextField fx:id="add_home_image_path_input" layoutX="459.0" layoutY="326.0" prefHeight="31.0" prefWidth="320.0" promptText="Enter Image..." />
+                  <Button fx:id="add_home_image_button" layoutX="785.0" layoutY="326.0" mnemonicParsing="false" onAction="#addUploadImage" prefHeight="30.0" prefWidth="86.0" text="Upload" />
+                  <Button fx:id="add_new_home_button" layoutX="285.0" layoutY="476.0" mnemonicParsing="false" onAction="#addHome" prefHeight="42.0" prefWidth="156.0" text="ADD HOME" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tab_delete" text="Delete">
+      <content>
+        <AnchorPane fx:id="anchor_delete" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="52.0" layoutY="32.0" text="DELETE" underline="true" />
+                  <TextField fx:id="delete_home_id_input" layoutX="8.0" layoutY="80.0" prefHeight="37.0" promptText="Enter Home ID..." />
+                  <Button fx:id="delete_button" layoutX="160.0" layoutY="173.0" mnemonicParsing="false" onAction="#deleteHome" prefHeight="41.0" prefWidth="157.0" text="Delete" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="tab_update" text="Update">
+        <content>
+          <AnchorPane fx:id="anchor_update" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="18.0" layoutY="91.0" prefHeight="30.0" prefWidth="140.0" text="STREET ADDRESS:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="160.0" text="CITY: ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="223.0" text="STATE: ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="290.0" text="HOME SIZE:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="355.0" text="HOME PRICE:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="update_home_address_input" layoutX="169.0" layoutY="84.0" prefHeight="30.0" prefWidth="250.0" text=" ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="update_home_city_input" layoutX="68.0" layoutY="145.0" prefHeight="30.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="update_home_state_input" layoutX="85.0" layoutY="208.0" prefHeight="30.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="update_home_size_input" layoutX="118.0" layoutY="275.0" prefHeight="30.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="update_home_price_input" layoutX="125.0" layoutY="340.0" prefHeight="30.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="85.0" layoutY="32.0" text="UPDATE HOME" underline="true" />
+                  <TextField fx:id="update_home_id_search_input" layoutX="15.0" layoutY="460.0" maxWidth="96.0" promptText="Enter Home ID" />
+                  <Button fx:id="update_home_search_button" layoutX="124.0" layoutY="458.0" mnemonicParsing="false" onAction="#findUpdateHome" prefHeight="30.0" text="Search" />
+                  <Button fx:id="update_save_button" layoutX="350.0" layoutY="496.0" mnemonicParsing="false" onAction="#updateHome" prefHeight="49.0" prefWidth="191.0" text="Update" />
+                  <ImageView fx:id="update_image_view" fitHeight="287.0" fitWidth="420.0" layoutX="446.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextField fx:id="update_imagepath_input" layoutX="446.0" layoutY="312.0" prefHeight="37.0" prefWidth="350.0" promptText="Enter Image Path..." />
+                  <Button fx:id="update_imagepath_button" layoutX="808.0" layoutY="315.0" mnemonicParsing="false" onAction="#uploadUpdateImage" prefHeight="30.0" text="Upload">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tab_realtors" text="Realtors">
+        <content>
+          <AnchorPane fx:id="anchor_realtors" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="32.0" layoutY="14.0" text="REALTOR" underline="true" />
+                  <Label layoutX="13.0" layoutY="68.0" text="FIRST NAME:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="real_fname_label" layoutX="118.0" layoutY="68.0" text="-">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="133.0" text="LAST NAME: ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="real_lname_label" layoutX="109.0" layoutY="133.0" text="-">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="189.0" text="EMAIL: ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="real_email_label" layoutX="72.0" layoutY="189.0" text="-">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="252.0" text="PHONE: ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="real_phone_label" layoutX="81.0" layoutY="252.0" text="-">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="search_realtor_input" layoutX="19.0" layoutY="342.0" prefHeight="37.0" prefWidth="150.0" promptText="Enter Name..." />
+                  <Button fx:id="search_realtor_button" layoutX="182.0" layoutY="349.0" mnemonicParsing="false" onAction="#searchRealtor" prefHeight="30.0" text="Search">
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="realtor_add_home_input" layoutX="21.0" layoutY="398.0" prefHeight="37.0" prefWidth="100.0" promptText="Enter Home ID" />
+                  <Button fx:id="realtor_add_button" layoutX="134.0" layoutY="405.0" mnemonicParsing="false" onAction="#addRealtorToHome" prefHeight="30.0" text="Add ">
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="627.0" layoutY="14.0" text="NEW REALTOR" underline="true" />
+                  <Label layoutX="505.0" layoutY="68.0" text="FIRST NAME:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="505.0" layoutY="140.0" text="LAST NAME: ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="505.0" layoutY="220.0" text="EMAIL: ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="505.0" layoutY="303.0" text="PHONE: ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="realtor_fname_input" layoutX="611.0" layoutY="65.0" prefWidth="200.0" promptText="Enter First Name..." />
+                  <TextField fx:id="realtor_lname_input" layoutX="601.0" layoutY="139.0" prefWidth="200.0" promptText="Enter Last Name..." />
+                  <TextField fx:id="realtor_email_input" layoutX="561.0" layoutY="217.0" prefWidth="200.0" promptText="Enter Email" />
+                  <TextField fx:id="realtor_phone_input" layoutX="568.0" layoutY="300.0" prefWidth="200.0" promptText="Enter Phone Num..." />
+                  <Button fx:id="realtor_add_agent_button" layoutX="701.0" layoutY="381.0" mnemonicParsing="false" onAction="#addNewAgent" prefHeight="35.0" prefWidth="103.0" text="Add Agent" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tab_listings" text="Listings">
+        <content>
+          <AnchorPane fx:id="anchor_listings" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="417.0" layoutY="22.0" text="LISTINGS" underline="true" />
+                  <TableView fx:id="listings_table" layoutX="58.0" layoutY="59.0" prefHeight="361.0" prefWidth="784.0" tableMenuButtonVisible="true">
+                    <columns>
+                        <TableColumn fx:id="list_column_id" prefWidth="45.0" text="ID" />
+                        <TableColumn fx:id="list_column_address" prefWidth="185.0" text="Address" />
+                      <TableColumn fx:id="list_city_column" prefWidth="120.0" text="City" />
+                      <TableColumn fx:id="list_state_column" prefWidth="75.0" text="State" />
+                        <TableColumn fx:id="list_price_column" prefWidth="100.0" text="Price" />
+                        <TableColumn fx:id="list_size_column" prefWidth="100.0" text="Size" />
+                        <TableColumn fx:id="list_agent_column" prefWidth="135.0" text="Agent" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="listings_search_city_input" layoutX="58.0" layoutY="447.0" prefHeight="37.0" prefWidth="300.0" promptText="Search By City...">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="listings_search_city_button" layoutX="296.0" layoutY="490.0" mnemonicParsing="false" onAction="#listingSearchCity" text="Search" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tab_settings" text="Settings">
+        <content>
+          <AnchorPane fx:id="anchor_settings" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="58.0" layoutY="26.0" text="CHANGE PASSWORD" underline="true" />
+                  <TextField fx:id="setting_username_input" layoutX="58.0" layoutY="67.0" promptText="Username">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="setting_new_password_input" layoutX="59.0" layoutY="138.0" promptText="New Password">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="setting_change_password_button" layoutX="81.0" layoutY="197.0" mnemonicParsing="false" onAction="#changeUserPassword" prefHeight="32.0" prefWidth="107.0" text="Save" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
