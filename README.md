@@ -1,9 +1,15 @@
 # Home-Library
-Distributed Systems project: spring-boot/RESTful Web Services
+Distributed Systems Project: RESTful application with Spring
 
-RESTful Web Service that allows the ability to save any home listings,property details, home images, realtor information,buyer leads,etc.
+RESTful Application that creates and saves new listed homes for sale. Listings include property details, home images, realtor information,buyer leads,etc.
 
-
-MongoDB
+Features:
+Java 
+Pure Java-based configuration
+Spring Boot
+Spring MVC 
+Spring WebSocket
 MariaDB
+MongoDB
+
 Complete with Service Client
